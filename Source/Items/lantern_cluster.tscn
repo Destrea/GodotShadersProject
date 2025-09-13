@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://k0jyhytv5wya"]
+
+[ext_resource type="Script" uid="uid://yyk6c514yol0" path="res://Items/lantern_cluster.gd" id="1_bg0hq"]
+[ext_resource type="PackedScene" uid="uid://b5cvd1bckf86j" path="res://Items/lantern.tscn" id="1_pobuq"]
+
+[node name="lantern Cluster" type="Node3D"]
+script = ExtResource("1_bg0hq")
+
+[node name="Lantern" parent="." instance=ExtResource("1_pobuq")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2, 0, 0)
+
+[node name="Lantern2" parent="." instance=ExtResource("1_pobuq")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 2)
+
+[node name="Lantern3" parent="." instance=ExtResource("1_pobuq")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -2)
+
+[node name="Lantern4" parent="." instance=ExtResource("1_pobuq")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00199132, 0)
+visible = false
+light_color = Color(0.830366, 0.479923, 0, 1)
+light_energy = 3.921
+omni_range = 16.749

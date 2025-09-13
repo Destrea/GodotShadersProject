@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://v02ny6xi0swv"]
+
+[ext_resource type="Shader" uid="uid://bud21hf04xmmj" path="res://Dithering.gdshader" id="1_grw3y"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_grw3y")
+shader_parameter/enable_color_limit = true
+shader_parameter/color_levels = 32
+shader_parameter/enable_dithering = true
+shader_parameter/dither_strength = 0.3

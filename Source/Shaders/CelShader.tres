@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cu68tnuhtby35"]
+
+[ext_resource type="Shader" uid="uid://c1htgv0y38xq" path="res://Shaders/CelShader.gdshader" id="1_wjaug"]
+[ext_resource type="Texture2D" uid="uid://51gu35ouk8lb" path="res://textures/kenney_prototype_textures/light/texture_07.png" id="2_wjaug"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 2
+shader = ExtResource("1_wjaug")
+shader_parameter/color = Color(0.639, 0.7782, 0.9, 1)
+shader_parameter/objTex = ExtResource("2_wjaug")
+shader_parameter/_speclar_color = Color(0.9, 0.9, 0.9, 1)
+shader_parameter/_glossiness = 32.0
+shader_parameter/_rim_size = 0.771
+shader_parameter/_rim_color = Color(1, 1, 1, 1)
+shader_parameter/_rim_smoothness = 0.01
+shader_parameter/_rim_threshold = 0.1
+shader_parameter/rimEnable = true
+shader_parameter/specularEnable = true

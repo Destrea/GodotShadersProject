@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsi23f6425jim"]
+
+[ext_resource type="Shader" uid="uid://8av0c0bkx8sh" path="res://copiedShader.gdshader" id="1_vyluk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_np1i8"]
+render_priority = 1
+shader = ExtResource("1_vyluk")
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+shader_parameter/edge_threshold = 0.001
+shader_parameter/noise_frequency = 10.0
+shader_parameter/noise_offset_intensity = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_jylrf"]
+size = Vector2(2, 2)
+
+[node name="Depth Quad" type="MeshInstance3D"]
+material_override = SubResource("ShaderMaterial_np1i8")
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_jylrf")

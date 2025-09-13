@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwybg5vtygihb"]
+
+[ext_resource type="Material" uid="uid://c2gcd6mbb7uk0" path="res://Shaders/refractiveIce.tres" id="1_3q5js"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_3q5js"]
+material = ExtResource("1_3q5js")
+
+[node name="IceWall" type="Node3D"]
+
+[node name="Object_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.407759, 0)
+mesh = SubResource("SphereMesh_3q5js")
+skeleton = NodePath("")

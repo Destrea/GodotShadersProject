@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://do77bocfln7ni"]
+
+[ext_resource type="Texture2D" uid="uid://iycq274rx2hj" path="res://textures/Sky/skybox.jpg" id="1_c65i2"]
+[ext_resource type="Script" uid="uid://b6jv0u7ax1ese" path="res://Models/ice_wall.gd" id="1_lqfjo"]
+[ext_resource type="Material" uid="uid://c2gcd6mbb7uk0" path="res://Shaders/refractiveIce.tres" id="1_xffhb"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_v5kpb"]
+panorama = ExtResource("1_c65i2")
+
+[sub_resource type="Sky" id="Sky_nurwl"]
+sky_material = SubResource("PanoramaSkyMaterial_v5kpb")
+
+[sub_resource type="Environment" id="Environment_d80q2"]
+background_mode = 2
+sky = SubResource("Sky_nurwl")
+
+[sub_resource type="BoxMesh" id="BoxMesh_pxxij"]
+material = ExtResource("1_xffhb")
+size = Vector3(3, 1.5, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ro5l"]
+size = Vector3(2.99005, 1.48925, 0.588318)
+
+[node name="IceWall" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_d80q2")
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05312e-06, 0.00504157, 6.99759e-05)
+mesh = SubResource("BoxMesh_pxxij")
+skeleton = NodePath("")
+
+[node name="IceWallCollider" type="StaticBody3D" parent="Cube" groups=["breakables"]]
+script = ExtResource("1_lqfjo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/IceWallCollider"]
+shape = SubResource("BoxShape3D_4ro5l")

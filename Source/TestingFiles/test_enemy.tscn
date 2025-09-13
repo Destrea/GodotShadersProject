@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnqpfgf41n4gh"]
+
+[ext_resource type="PackedScene" uid="uid://co8xf13a6oj0y" path="res://TestingFiles/health_bar_3d.tscn" id="1_3pron"]
+[ext_resource type="Script" uid="uid://6ba307ps1e86" path="res://TestingFiles/test_enemy.gd" id="1_feydj"]
+[ext_resource type="Material" uid="uid://dqxtmsegq6t32" path="res://hullOutline.tres" id="2_48v5g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xvly8"]
+size = Vector3(1, 3, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3g8yl"]
+render_priority = 3
+next_pass = ExtResource("2_48v5g")
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4xa2q"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2ow36"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Enemy" type="RigidBody3D" groups=["enemy"]]
+can_sleep = false
+script = ExtResource("1_feydj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_xvly8")
+
+[node name="TestEnemy" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 9.54543e-11, 5.82077e-11, -3.18181e-11, 3, -1.03712e-11, -5.82077e-11, 3.11136e-11, 1, 0, 0, 4.76837e-07)
+material_override = SubResource("StandardMaterial3D_3g8yl")
+mesh = SubResource("BoxMesh_4xa2q")
+skeleton = NodePath("../..")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 1.28864e-10, 9.66593e-31, -1.28864e-10, 1, 0, -9.66593e-31, 0, 1, -1.94289e-16, 1.85185, 0)
+visible = false
+layers = 4
+sorting_offset = 1.0
+billboard = 1
+render_priority = 1
+texture = SubResource("ViewportTexture_2ow36")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+render_target_update_mode = 3
+
+[node name="HealthBar3D" parent="SubViewport" instance=ExtResource("1_3pron")]
+visible = false
+visibility_layer = 7
+z_index = 2

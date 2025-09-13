@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dqxtmsegq6t32"]
+
+[ext_resource type="Shader" uid="uid://5hv4raqoblnf" path="res://TestingFiles/hullOutline.gdshader" id="1_x026q"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_x026q")
+shader_parameter/size = 1.05
+shader_parameter/color = Color(0, 0, 0, 1)

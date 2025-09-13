@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=3 uid="uid://b5cvd1bckf86j"]
+
+[ext_resource type="Shader" uid="uid://q72sehf40s5h" path="res://Projectiles/fireball.gdshader" id="1_byarc"]
+[ext_resource type="Script" uid="uid://njvm7wgv77ih" path="res://Items/lanternBob.gd" id="2_88civ"]
+[ext_resource type="Script" uid="uid://csm0ntevrl5ce" path="res://Items/flameFlicker.gd" id="3_21yxx"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dq45l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_21yxx"]
+render_priority = 3
+shader = ExtResource("1_byarc")
+shader_parameter/time_scale = 1.0
+shader_parameter/spin = 0.0
+shader_parameter/flame_brightness = 0.6
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 1.0
+shader_parameter/vertical_frequency = 1.0
+shader_parameter/size = -0.3
+shader_parameter/core_size = 1.0
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_dq45l")
+shader_parameter/color1 = Color(0.286, 0.22, 0.733, 1)
+shader_parameter/color2 = Color(0.98, 0.38, 0.34, 1)
+shader_parameter/color3 = Color(0.98, 0.95, 0.53, 1)
+shader_parameter/color4 = Color(1, 1, 1, 1)
+shader_parameter/bobMotion = true
+shader_parameter/amplitude = 0.4
+shader_parameter/bobSpeed = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_byarc"]
+flip_faces = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_glx37"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7hr1k"]
+render_priority = 3
+shader = ExtResource("1_byarc")
+shader_parameter/time_scale = 1.0
+shader_parameter/spin = 0.0
+shader_parameter/flame_brightness = 0.6
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 2.0
+shader_parameter/vertical_frequency = 3.0
+shader_parameter/size = -0.3
+shader_parameter/core_size = 1.0
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_glx37")
+shader_parameter/color1 = Color(0.286, 0.22, 0.733, 1)
+shader_parameter/color2 = Color(0.98, 0.38, 0.34, 1)
+shader_parameter/color3 = Color(0.98, 0.95, 0.53, 1)
+shader_parameter/color4 = Color(1, 1, 1, 1)
+shader_parameter/bobMotion = true
+shader_parameter/amplitude = 0.4
+shader_parameter/bobSpeed = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_88civ"]
+top_radius = 0.1
+bottom_radius = 0.45
+height = 0.6
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7h4r1"]
+noise_type = 3
+frequency = 0.0364
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_j3tja"]
+noise = SubResource("FastNoiseLite_7h4r1")
+
+[node name="Lantern" type="MeshInstance3D"]
+material_override = SubResource("ShaderMaterial_21yxx")
+mesh = SubResource("SphereMesh_byarc")
+skeleton = NodePath("")
+script = ExtResource("2_88civ")
+
+[node name="Trail" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.391392, 0)
+material_override = SubResource("ShaderMaterial_7hr1k")
+transparency = 0.7
+mesh = SubResource("CylinderMesh_88civ")
+
+[node name="Light" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(0.830366, 0.479923, 0, 1)
+light_energy = 4.0
+light_indirect_energy = 0.99
+light_volumetric_fog_energy = 0.0
+light_specular = 0.535
+spot_range = 8.0
+spot_angle = 125.15
+spot_angle_attenuation = 0.707107
+script = ExtResource("3_21yxx")
+noise = SubResource("NoiseTexture3D_j3tja")

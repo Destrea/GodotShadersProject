@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd4wjudto7ak5"]
+
+[ext_resource type="Material" uid="uid://cu68tnuhtby35" path="res://Shaders/CelShader.tres" id="1_hoe2g"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_hoe2g"]
+
+[node name="CelShadeTest" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000788271, -0.00254512, -0.00791052)
+material_override = ExtResource("1_hoe2g")
+mesh = SubResource("SphereMesh_hoe2g")
+metadata/_edit_lock_ = true

@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bwl2ybaydhscl"]
+
+[ext_resource type="Shader" uid="uid://rrw6il1h4pqc" path="res://Models/ToonShader.gdshader" id="1_3m5hc"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_3m5hc")
+shader_parameter/zNear = 0.05
+shader_parameter/zFar = 100.0
+shader_parameter/enable_outline = true
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_thickness = 2.0
+shader_parameter/enable_color_limit = true
+shader_parameter/color_levels = 8
+shader_parameter/enable_color_palette = true
+shader_parameter/color1 = Color(1, 0.925, 0.839, 1)
+shader_parameter/color2 = Color(1, 0.831, 0.639, 1)
+shader_parameter/color3 = Color(1, 0.667, 0.369, 1)
+shader_parameter/color4 = Color(0.816, 0.506, 0.349, 1)
+shader_parameter/color5 = Color(0.553, 0.412, 0.478, 1)
+shader_parameter/color6 = Color(0.329, 0.306, 0.408, 1)
+shader_parameter/color7 = Color(0.125, 0.236, 0.337, 1)
+shader_parameter/color8 = Color(0.05, 0.169, 0.271, 1)
+shader_parameter/enable_dithering = true
+shader_parameter/dither_strength = 0.3

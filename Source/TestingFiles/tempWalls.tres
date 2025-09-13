@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dv7of8pvibapf"]
+
+[ext_resource type="Shader" uid="uid://c1htgv0y38xq" path="res://Shaders/CelShader.gdshader" id="1_06004"]
+[ext_resource type="Texture2D" uid="uid://ccv3xk5y30ujr" path="res://DungeonGeneration/Bricks064_1K-PNG_Color.png" id="2_qrq05"]
+
+[resource]
+render_priority = 2
+shader = ExtResource("1_06004")
+shader_parameter/color = Color(0.400698, 0.400698, 0.400698, 1)
+shader_parameter/objTex = ExtResource("2_qrq05")
+shader_parameter/_speclar_color = Color(0.9, 0.9, 0.9, 1)
+shader_parameter/_glossiness = 32.0
+shader_parameter/_rim_size = 0.5
+shader_parameter/_rim_color = Color(1, 1, 1, 1)
+shader_parameter/_rim_smoothness = 0.01
+shader_parameter/_rim_threshold = 0.1
+shader_parameter/rimEnable = false
+shader_parameter/specularEnable = false

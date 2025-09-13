@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://cpjt4adivomb"
+path="res://.godot/imported/Showcase.3.map-7d9f067fde949579d186af69ef38b8cc.tres"
+
+[deps]
+
+source_file="res://Trenchbroom/autosave/Showcase.3.map"
+dest_files=["res://.godot/imported/Showcase.3.map-7d9f067fde949579d186af69ef38b8cc.tres"]
+
+[params]
+

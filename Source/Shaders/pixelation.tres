@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ccgdnt2dmpidh"]
+
+[ext_resource type="Shader" uid="uid://dnyhy372s5o0c" path="res://Shaders/PixelationShader.tres" id="1_ea5y3"]
+
+[resource]
+shader = ExtResource("1_ea5y3")
+shader_parameter/PixelScalar = 256.0

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://kbqji6656pge"]
+
+[ext_resource type="Material" uid="uid://br8t00eqlcjrw" path="res://ice_wall.tres" id="1_3furd"]
+
+[resource]
+next_pass = ExtResource("1_3furd")
+uv1_triplanar_sharpness = 0.366021
+uv2_world_triplanar = true

@@ -1,0 +1,14 @@
+MeshInstance3D
+Node
+FuncGodotMap
+Camera3D
+SubViewport
+OmniLight3D
+Node3D
+GPUParticles3D
+CollisionShape3D
+Area3D
+RayCast3D
+StaticBody3D
+MultiMeshInstance3D
+SpotLight3D

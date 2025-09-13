@@ -1,0 +1,290 @@
+[gd_scene load_steps=18 format=3 uid="uid://c2ydfuf515kb8"]
+
+[ext_resource type="Script" uid="uid://b4ubc86db55ch" path="res://scripts/PlayerController.gd" id="1_u87g2"]
+[ext_resource type="PackedScene" uid="uid://dcvh3f4xt3qo5" path="res://Levels/UINode.tscn" id="2_fnls0"]
+[ext_resource type="PackedScene" uid="uid://cgmpnq41ukt1i" path="res://TestingFiles/game_menu.tscn" id="2_lqday"]
+[ext_resource type="Material" uid="uid://bwl2ybaydhscl" path="res://TestingFiles/ToonMaterial.tres" id="4_ygl80"]
+[ext_resource type="Script" uid="uid://c6t8wjwjsql85" path="res://ScreenSpadeShader.gd" id="5_mipkp"]
+[ext_resource type="PackedScene" uid="uid://bxa76ev4ypj10" path="res://TestingFiles/spell_sword.tscn" id="6_g83f7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fxtdb"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5nlus"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_6rdpg"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="Animation" id="Animation_pibr2"]
+resource_name = "Crouch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Collision Shape:shape:height")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.0, 1.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Collision Shape:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.25, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lg1tm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Collision Shape:shape:height")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Collision Shape:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/FPS Camera/Weapons/SpellSword/Sword:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.793618, -0.863655, -1.03241)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Head/FPS Camera/Weapons/SpellSword/Sword:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.586731, 0.700336, -0.550349)]
+}
+
+[sub_resource type="Animation" id="Animation_mevoc"]
+resource_name = "sword_idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/FPS Camera/Weapons/SpellSword/Sword:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(0.586731, 0.700336, -0.550349), Vector3(0.586731, 0.700336, -0.550349)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/FPS Camera/Weapons/SpellSword/Sword:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(1.06472, -0.517412, -0.402646), Vector3(0.982153, -0.538448, -0.425277)]
+}
+
+[sub_resource type="Animation" id="Animation_g64rg"]
+resource_name = "sword_swing1"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/FPS Camera/Weapons/SpellSword/Sword:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.793618, -0.863655, -1.03241), Vector3(0.427944, 0.940055, -1.29201)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/FPS Camera/Weapons/SpellSword/Sword:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.586731, 0.700336, -0.550349), Vector3(-0.653254, 0.537644, -0.591994)]
+}
+
+[sub_resource type="Animation" id="Animation_mipkp"]
+resource_name = "sword_swing2"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/FPS Camera/Weapons/SpellSword/Sword:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.427944, 0.940055, -1.29201), Vector3(1.34527, -1.61485, -1.29544)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/FPS Camera/Weapons/SpellSword/Sword:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.653254, 0.537644, -0.591994), Vector3(0.586731, 0.700336, -0.550349)]
+}
+
+[sub_resource type="Animation" id="Animation_ygl80"]
+resource_name = "sword_swing3"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/FPS Camera/Weapons/SpellSword/Sword:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.34527, -1.61485, -1.29544), Vector3(1.5708, 0.15708, 0), Vector3(0, 0, -0.27372)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/FPS Camera/Weapons/SpellSword/Sword:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.586731, 0.700336, -0.550349), Vector3(0.0901033, 0.843475, -0.591994), Vector3(0.0304067, 0.282592, -0.591994)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_05wa6"]
+_data = {
+&"Crouch": SubResource("Animation_pibr2"),
+&"RESET": SubResource("Animation_lg1tm"),
+&"sword_idle": SubResource("Animation_mevoc"),
+&"sword_swing1": SubResource("Animation_g64rg"),
+&"sword_swing2": SubResource("Animation_mipkp"),
+&"sword_swing3": SubResource("Animation_ygl80")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mdm2k"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_u87g2")
+metadata/_edit_lock_ = true
+
+[node name="GameMenu" parent="." instance=ExtResource("2_lqday")]
+visible = false
+
+[node name="Player UI" parent="." instance=ExtResource("2_fnls0")]
+top_level = true
+z_index = 1
+
+[node name="Collision Shape" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_fxtdb")
+
+[node name="Capsule Mesh" type="MeshInstance3D" parent="Collision Shape"]
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_5nlus")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Collision Shape/Capsule Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00378346, 0.00952327, -0.000649929)
+visible = false
+light_energy = 5.0
+omni_range = 8.0
+
+[node name="Head" type="Node3D" parent="."]
+
+[node name="FPS Camera" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.696893, 0)
+cull_mask = 131
+
+[node name="Toon Effect" type="MeshInstance3D" parent="Head/FPS Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000756853, 0.227473, -0.197812)
+layers = 643
+material_override = ExtResource("4_ygl80")
+cast_shadow = 0
+extra_cull_margin = 16384.0
+ignore_occlusion_culling = true
+mesh = SubResource("QuadMesh_6rdpg")
+skeleton = NodePath("")
+script = ExtResource("5_mipkp")
+
+[node name="Weapons" type="Node3D" parent="Head/FPS Camera"]
+
+[node name="SpellSword" parent="Head/FPS Camera/Weapons" instance=ExtResource("6_g83f7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.679, 0)
+
+[node name="cooldownTimer" type="Timer" parent="Head/FPS Camera/Weapons"]
+
+[node name="CameraCast" type="RayCast3D" parent="Head/FPS Camera"]
+target_position = Vector3(0, 0, -1)
+debug_shape_custom_color = Color(0.34936, 0.714849, 0.975079, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_05wa6")
+}
+autoplay = "sword_idle"
+playback_default_blend_time = 0.1
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01562, 0)
+shape = SubResource("SphereShape3D_mdm2k")
+target_position = Vector3(0, -0.5, 0)
+debug_shape_custom_color = Color(0, 0.796078, 0, 1)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]

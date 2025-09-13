@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://utl4gnayn1qy"]
+
+[ext_resource type="Shader" uid="uid://52ossfnvxgfw" path="res://TestingFiles/generalMat.gdshader" id="1_8hn8f"]
+[ext_resource type="Texture2D" uid="uid://or36awuo501r" path="res://DungeonGeneration/Tiles093_1K-PNG_Color.png" id="2_40m84"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_8hn8f")
+shader_parameter/object_texture = ExtResource("2_40m84")
+shader_parameter/color_modifier = Color(0.631384, 0.966053, 1, 1)

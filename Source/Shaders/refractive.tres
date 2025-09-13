@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://df5krfna6q481"]
+
+[ext_resource type="Material" uid="uid://c2gcd6mbb7uk0" path="res://Shaders/refractiveIce.tres" id="1_c4wge"]
+[ext_resource type="Shader" uid="uid://bi03u15m4c3lr" path="res://Shaders/refractive.gdshader" id="1_xh3ky"]
+[ext_resource type="Texture2D" uid="uid://s64wms0jvwgj" path="res://textures/ice/Ice002_1K-PNG/Ice002_1K-PNG_Color.png" id="2_c4wge"]
+[ext_resource type="Texture2D" uid="uid://ceg8316io0wv3" path="res://textures/ice/Ice002_1K-PNG/Ice002_1K-PNG_NormalGL.png" id="3_c1wb1"]
+[ext_resource type="Texture2D" uid="uid://detmel6itiis3" path="res://textures/ice/Ice002_1K-PNG/Ice002_1K-PNG_Displacement.png" id="4_bs3fo"]
+
+[resource]
+render_priority = 2
+next_pass = ExtResource("1_c4wge")
+shader = ExtResource("1_xh3ky")
+shader_parameter/albedo = Color(0.55, 0.8125, 1, 0.109804)
+shader_parameter/albedo_texture = ExtResource("2_c4wge")
+shader_parameter/roughness = 0.15
+shader_parameter/roughness_texture = ExtResource("4_bs3fo")
+shader_parameter/refraction = 0.5
+shader_parameter/refraction_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/normal_strength = 0.5
+shader_parameter/normal_map = ExtResource("3_c1wb1")
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+shader_parameter/surface_contribution = 0.2
+shader_parameter/specular_contribution = 0.2
+shader_parameter/refraction_contribution = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)

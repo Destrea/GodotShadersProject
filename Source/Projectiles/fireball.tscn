@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://fgnuvb6fttw0"]
+
+[ext_resource type="Script" uid="uid://dk554fosx6a5j" path="res://Projectiles/fireball.gd" id="1_dwhak"]
+[ext_resource type="Shader" uid="uid://q72sehf40s5h" path="res://Projectiles/fireball.gdshader" id="2_w0vbj"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_w0vbj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4wvep"]
+render_priority = 5
+shader = ExtResource("2_w0vbj")
+shader_parameter/time_scale = 0.5
+shader_parameter/spin = 4.155
+shader_parameter/flame_brightness = 0.6
+shader_parameter/color_intensity = 1.0
+shader_parameter/horizontal_frequency = 2.5
+shader_parameter/vertical_frequency = 1.5
+shader_parameter/size = -0.3
+shader_parameter/core_size = 1.0
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_w0vbj")
+shader_parameter/color1 = Color(0.286, 0.22, 0.733, 1)
+shader_parameter/color2 = Color(0.98, 0.38, 0.34, 1)
+shader_parameter/color3 = Color(0.98, 0.95, 0.53, 1)
+shader_parameter/color4 = Color(1, 1, 1, 1)
+shader_parameter/bobMotion = false
+shader_parameter/amplitude = 0.4
+shader_parameter/bobSpeed = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_linln"]
+lightmap_size_hint = Vector2i(17, 9)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_w0vbj"]
+radius = 1.5
+
+[node name="Fireball" type="Node3D"]
+script = ExtResource("1_dwhak")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+layers = 3
+material_override = SubResource("ShaderMaterial_4wvep")
+mesh = SubResource("SphereMesh_linln")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1.00408, 0, 0, 0, 1.00408, 0, 0, 0, 0.0355375, 0, 0, 0)
+target_position = Vector3(0, 0, -1)
+hit_from_inside = true
+
+[node name="AOE" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AOE"]
+shape = SubResource("SphereShape3D_w0vbj")
+
+[connection signal="body_entered" from="AOE" to="." method="_on_aoe_body_entered"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuj365lags70t"]
+
+[ext_resource type="PackedScene" uid="uid://by4jvou6iaai5" path="res://object_4.tscn" id="1_fqx74"]
+[ext_resource type="Shader" uid="uid://ffnm8ve8o7y7" path="res://Shaders/refractiveIce.gdshader" id="2_n57hq"]
+[ext_resource type="Texture2D" uid="uid://s64wms0jvwgj" path="res://textures/ice/Ice002_1K-PNG/Ice002_1K-PNG_Color.png" id="3_afmme"]
+[ext_resource type="Texture2D" uid="uid://bq1tnrcp4el3y" path="res://textures/ice/Ice002_1K-PNG/Ice002_1K-PNG_NormalDX.png" id="4_p75qt"]
+[ext_resource type="Texture2D" uid="uid://d4mln0t1xjbyi" path="res://textures/ice/Ice003_1K-PNG/Ice003_1K-PNG_NormalDX.png" id="5_6ed13"]
+[ext_resource type="Texture2D" uid="uid://detmel6itiis3" path="res://textures/ice/Ice002_1K-PNG/Ice002_1K-PNG_Displacement.png" id="6_74nji"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n57hq"]
+resource_local_to_scene = true
+render_priority = 4
+shader = ExtResource("2_n57hq")
+shader_parameter/texture_emission = ExtResource("6_74nji")
+shader_parameter/emission_color = ExtResource("3_afmme")
+shader_parameter/color = Color(0.867603, 0.931443, 0.984797, 1)
+shader_parameter/depth_scale = 0.05
+shader_parameter/discard_boundaries = false
+shader_parameter/emission_energy = 7.0
+shader_parameter/uv1_scale = Vector2(1, 1)
+shader_parameter/uv1_offset = Vector2(0, 0)
+shader_parameter/normalmap_a = ExtResource("4_p75qt")
+shader_parameter/normalmap_b = ExtResource("5_6ed13")
+shader_parameter/nm_strength = 0.195
+shader_parameter/refraction_index = 0.5
+shader_parameter/ice_transparency = 0.0
+shader_parameter/in_vec = Vector3(0, 0, 0)
+shader_parameter/out_vec = Vector3(0, 0, 0)
+shader_parameter/alpha = 0.84
+
+[node name="Sketchfab_Scene2" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Object_4" parent="." instance=ExtResource("1_fqx74")]
+material_override = SubResource("ShaderMaterial_n57hq")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b43orvrjpaq6v"]
+
+[ext_resource type="Shader" uid="uid://b33sssk4kye1e" path="res://DepthNormalPP.gdshader" id="1_fm5u0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_np1i8"]
+render_priority = 0
+shader = ExtResource("1_fm5u0")
+shader_parameter/zNear = 0.05
+shader_parameter/zFar = 100.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_thickness = 1.5
+shader_parameter/noise_frequency = 10.0
+shader_parameter/noise_offset_intensity = 0.002
+
+[sub_resource type="QuadMesh" id="QuadMesh_jylrf"]
+
+[node name="Depth Quad" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_np1i8")
+mesh = SubResource("QuadMesh_jylrf")

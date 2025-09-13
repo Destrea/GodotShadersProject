@@ -1,0 +1,18 @@
+[gd_resource type="VisualShader" load_steps=2 format=3 uid="uid://cwa7u7gjfam2o"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_l31ho"]
+output_port_for_preview = 0
+input_name = "uv"
+
+[resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+
+
+"
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(1800, 220)
+nodes/fragment/2/node = SubResource("VisualShaderNodeInput_l31ho")
+nodes/fragment/2/position = Vector2(380, 100)

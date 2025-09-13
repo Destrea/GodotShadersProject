@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bnq1x61s66kmi"]
+
+[ext_resource type="Texture2D" uid="uid://bdqb5jsxy0ufs" path="res://textures/kenney_prototype_textures/light/texture_01.png" id="1_d6tgq"]
+[ext_resource type="Material" uid="uid://diy5tgojcpk4d" path="res://DungeonGeneration/dungeonFloor.tres" id="2_anh20"]
+
+[resource]
+next_pass = ExtResource("2_anh20")
+albedo_texture = ExtResource("1_d6tgq")
+metallic_specular = 0.0
+texture_filter = 2

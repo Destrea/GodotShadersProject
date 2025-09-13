@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://dgvmece5d56lp"]
+
+[ext_resource type="Shader" uid="uid://bl1gsdarq5dyf" path="res://Shaders/SimpleWater.gdshader" id="1_5h35g"]
+[ext_resource type="FastNoiseLite" uid="uid://clu1k8l6hv2kn" path="res://Shaders/waterNoise.tres" id="2_fkasd"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_icjd8"]
+generate_mipmaps = false
+seamless = true
+noise = ExtResource("2_fkasd")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jbnfh"]
+generate_mipmaps = false
+seamless = true
+as_normal_map = true
+noise = ExtResource("2_fkasd")
+
+[resource]
+render_priority = 5
+shader = ExtResource("1_5h35g")
+shader_parameter/height_scale = 0.3
+shader_parameter/noise = SubResource("NoiseTexture2D_icjd8")
+shader_parameter/normalmap = SubResource("NoiseTexture2D_jbnfh")

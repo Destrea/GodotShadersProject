@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://br8t00eqlcjrw"]
+
+[ext_resource type="Material" uid="uid://s4xu83uamb7j" path="res://refractive.tres" id="1_m761f"]
+[ext_resource type="Shader" uid="uid://ffnm8ve8o7y7" path="res://Shaders/refractiveIce.gdshader" id="1_tmkvh"]
+[ext_resource type="Texture2D" uid="uid://s64wms0jvwgj" path="res://textures/ice/Ice002_1K-PNG/Ice002_1K-PNG_Color.png" id="2_m761f"]
+[ext_resource type="Texture2D" uid="uid://detmel6itiis3" path="res://textures/ice/Ice002_1K-PNG/Ice002_1K-PNG_Displacement.png" id="3_3ws77"]
+
+[resource]
+render_priority = 2
+next_pass = ExtResource("1_m761f")
+shader = ExtResource("1_tmkvh")
+shader_parameter/texture_emission = ExtResource("3_3ws77")
+shader_parameter/emission_color = ExtResource("2_m761f")
+shader_parameter/color = Color(0.399, 0.711233, 0.95, 1)
+shader_parameter/depth_scale = 0.05
+shader_parameter/discard_boundaries = false
+shader_parameter/emission_energy = 7.0
+shader_parameter/uv1_scale = Vector2(1, 1)
+shader_parameter/uv1_offset = Vector2(0, 0)
+shader_parameter/refraction_enable = true
+shader_parameter/nm_strength = 0.5
+shader_parameter/refraction_index = 0.5
+shader_parameter/ice_transparency = 0.0
+shader_parameter/in_vec = Vector3(0, 0, 0)
+shader_parameter/out_vec = Vector3(0, 0, 0)
+shader_parameter/alpha = 0.5

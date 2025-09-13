@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://spe4avdwrwg1"]
+
+[ext_resource type="Material" uid="uid://dgvmece5d56lp" path="res://Shaders/waterShader.tres" id="1_kp30c"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_mcfqx"]
+radius = 2.0
+radial_segments = 128
+rings = 64
+is_hemisphere = true
+
+[node name="GroundFire" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.41462, 0)
+material_override = ExtResource("1_kp30c")
+mesh = SubResource("SphereMesh_mcfqx")

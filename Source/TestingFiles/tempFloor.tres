@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bwttcl2ek4157"]
+
+[ext_resource type="Shader" uid="uid://c1htgv0y38xq" path="res://Shaders/CelShader.gdshader" id="1_80qux"]
+[ext_resource type="Texture2D" uid="uid://or36awuo501r" path="res://DungeonGeneration/Tiles093_1K-PNG_Color.png" id="2_76oqa"]
+
+[resource]
+render_priority = 2
+shader = ExtResource("1_80qux")
+shader_parameter/color = Color(0.241837, 0.682659, 0.624816, 1)
+shader_parameter/objTex = ExtResource("2_76oqa")
+shader_parameter/_speclar_color = Color(0.9, 0.9, 0.9, 1)
+shader_parameter/_glossiness = 32.0
+shader_parameter/_rim_size = 0.721
+shader_parameter/_rim_color = Color(1, 1, 1, 1)
+shader_parameter/_rim_smoothness = 0.01
+shader_parameter/_rim_threshold = 0.1
+shader_parameter/rimEnable = false
+shader_parameter/specularEnable = false

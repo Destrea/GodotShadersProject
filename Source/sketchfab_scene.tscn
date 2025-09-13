@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmcnw342pem26"]
+
+[ext_resource type="PackedScene" uid="uid://qr3ibpei6mvo" path="res://Items/suzanne_blender_monkey.glb" id="1_dhub7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2x2vl"]
+albedo_color = Color(0.738617, 0.444692, 0.386912, 1)
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_dhub7")]
+
+[node name="Object_4" parent="Sketchfab_model/root/GLTF_SceneRootNode/Suzanne_0" index="0"]
+material_override = SubResource("StandardMaterial3D_2x2vl")

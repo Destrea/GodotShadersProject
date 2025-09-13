@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b7ty77t6nyg6n"]
+
+[ext_resource type="Shader" uid="uid://52ossfnvxgfw" path="res://TestingFiles/generalMat.gdshader" id="1_x4qgi"]
+[ext_resource type="Texture2D" uid="uid://ccv3xk5y30ujr" path="res://DungeonGeneration/Bricks064_1K-PNG_Color.png" id="2_oy5o5"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 2
+shader = ExtResource("1_x4qgi")
+shader_parameter/object_texture = ExtResource("2_oy5o5")
+shader_parameter/color_modifier = Color(1, 1, 1, 1)

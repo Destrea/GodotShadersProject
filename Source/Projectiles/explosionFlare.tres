@@ -1,0 +1,33 @@
+[gd_resource type="CapsuleMesh" load_steps=5 format=3 uid="uid://c0lb4qg8265wt"]
+
+[ext_resource type="Shader" uid="uid://q72sehf40s5h" path="res://Projectiles/fireball.gdshader" id="1_vp51n"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4wvep"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_linln"]
+noise = SubResource("FastNoiseLite_4wvep")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_linln"]
+render_priority = 3
+shader = ExtResource("1_vp51n")
+shader_parameter/time_scale = 1.0
+shader_parameter/spin = 0.4
+shader_parameter/flame_brightness = 0.1
+shader_parameter/color_intensity = 0.3
+shader_parameter/horizontal_frequency = 1.0
+shader_parameter/vertical_frequency = 1.0
+shader_parameter/size = -0.3
+shader_parameter/core_size = 1.0
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_linln")
+shader_parameter/color1 = Color(0.286, 0.22, 0.733, 1)
+shader_parameter/color2 = Color(0.98, 0.38, 0.34, 1)
+shader_parameter/color3 = Color(0.98, 0.95, 0.53, 1)
+shader_parameter/color4 = Color(1, 1, 1, 1)
+shader_parameter/bobMotion = false
+shader_parameter/amplitude = 0.4
+shader_parameter/bobSpeed = 1.0
+
+[resource]
+material = SubResource("ShaderMaterial_linln")
+radius = 0.063
+height = 0.5

@@ -1,0 +1,31 @@
+[gd_resource type="SphereMesh" load_steps=5 format=3 uid="uid://niqab4hcfwni"]
+
+[ext_resource type="Shader" uid="uid://cgsalaj5jpd6r" path="res://Projectiles/exploCloud2.gdshader" id="1_3o6iy"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4k3m2"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4fi82"]
+noise = SubResource("FastNoiseLite_4k3m2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_crr4c"]
+render_priority = 0
+shader = ExtResource("1_3o6iy")
+shader_parameter/time_scale = 1.0
+shader_parameter/spin = 2.0
+shader_parameter/flame_brightness = 0.6
+shader_parameter/color_intensity = -1.0
+shader_parameter/horizontal_frequency = 2.5
+shader_parameter/vertical_frequency = 1.5
+shader_parameter/size = -1.0
+shader_parameter/core_size = 1.0
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_4fi82")
+shader_parameter/color1 = Color(0.94, 0.94, 0.94, 1)
+shader_parameter/color2 = Color(0.223103, 0.223103, 0.223103, 1)
+shader_parameter/color3 = Color(0.187176, 0.187176, 0.187176, 1)
+shader_parameter/color4 = Color(0.000113828, 0.000113828, 0.000113828, 1)
+shader_parameter/bobMotion = false
+shader_parameter/amplitude = 0.4
+shader_parameter/bobSpeed = 1.0
+
+[resource]
+material = SubResource("ShaderMaterial_crr4c")
