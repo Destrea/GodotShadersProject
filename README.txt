@@ -1,5 +1,5 @@
 This is a project I completed in my university's "Topics in Game Development"
-course. We were able to choose our own project topic, and I chose to learn about
+course, in spring 2025. We were able to choose our own project topic, and I chose to learn about
 shaders. This project is completed in Godot engine 4.4, and features a few different
 shaders, utilizing both vertex and fragment shaders.
 
